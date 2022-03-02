@@ -7,7 +7,6 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <link rel="icon" href="/favicon.ico" />
-          <meta name="robots" content="noindex" />
           <meta
             name="description"
             content="Senior front-end developer favoring React"
