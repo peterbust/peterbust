@@ -24,15 +24,4 @@ describe("<ProfileCard /> component", () => {
     expect(link.href).toContain("https://www.linkedin.com/");
     expect(link.target).toBe("_blank");
   });
-
-  it("Renders a link to email", () => {
-    render(<ProfileCard />);
-
-    const link = screen.getByRole("link", {
-      name: /info@peterbust.dev/i,
-    }) as HTMLAnchorElement;
-
-    expect(link).toBeInTheDocument();
-    expect(link.href).toContain("mailto:info@peterbust.dev");
-  });
 });

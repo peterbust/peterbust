@@ -27,20 +27,17 @@ const ProfileCard = () => (
   <Container>
     <div>
       <h1>Peter Bust</h1>
-      <h2>Senior front-end developer favoring React</h2>
+      <h2>Freelance Senior front-end developer favoring React</h2>
       <p>
-        Eindhoven, The Netherlands
         <br />
-        <br />
-        See{" "}
+        Get in touch:{" "}
         <a
           href="https://www.linkedin.com/in/peter-bust-035b733a/"
           target="_blank"
           rel="noreferrer"
         >
           LinkedIn
-        </a>{" "}
-        or <a href="mailto:info@peterbust.dev">info@peterbust.dev</a>
+        </a>
       </p>
     </div>
   </Container>
