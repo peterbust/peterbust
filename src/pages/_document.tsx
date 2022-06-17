@@ -19,6 +19,7 @@ class MyDocument extends Document {
       </Html>
     );
   }
+
   // @todo replace with Rust support
   // https://nextjs.org/docs/advanced-features/compiler#styled-components
   // @ts-ignore

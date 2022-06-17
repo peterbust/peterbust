@@ -1,0 +1,28 @@
+{
+  "id": "c2f58840-2dbd-461c-93cd-7aad08355ee0",
+  "uid": "doloribus-reiciendis-rerum",
+  "type": "hero",
+  "data": {
+    "title": [
+      {
+        "type": "heading1",
+        "text": "Leverage leading-edge infrastructures",
+        "spans": []
+      }
+    ],
+    "subtitle": [
+      {
+        "type": "heading2",
+        "text": "Visualize visionary systems",
+        "spans": []
+      }
+    ],
+    "introduction": [
+      {
+        "type": "paragraph",
+        "text": "Duis duis ipsum Lorem aliqua laborum. Ad non culpa cillum in id aliquip ex esse irure culpa sit aliquip aliquip elit occaecat.",
+        "spans": []
+      }
+    ]
+  }
+}

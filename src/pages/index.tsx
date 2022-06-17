@@ -1,40 +1,91 @@
+import { PrismicRichText } from "@prismicio/react";
 import Head from "next/head";
 import Link from "next/link";
-import type { NextPage } from "next";
+import type { GetStaticProps, NextPage } from "next";
+import type { PrismicDocument, RichTextField } from "@prismicio/types";
 
-import { Typography } from "@components/index";
+import { createClient } from "../../prismicio";
+import { Spacer, Typography } from "@components/index";
 
-const Home: NextPage = () => (
-  <div>
-    <Head>
-      <title>Peter Bust, Front-end Developer</title>
-    </Head>
-    <main style={{ padding: "10rem" }}>
-      <Typography style="h1">Peter Bust</Typography>
-      <Typography style="h2">
-        Freelance Front-end Developer,
-        <br />
-        favoring React and Next.js
-      </Typography>
-      <br />
-      <br />
-      <br />
-      <br />
-      <div style={{ width: "60%" }}>
-        <Typography>
-          Met meer dan tien jaar web ervaring heb ik gewerkt voor zowel
-          Nederlandse als internationale merken zoals CZ, Shimano, Jumbo,
-          L&apos;Oréal en Proctor & Gamble als Senior- en Lead Front-end
-          Developer. Gevestigd in Eindhoven.
-        </Typography>
+type Props = {
+  data: {
+    hero: PrismicDocument & {
+      data: {
+        introduction: RichTextField;
+        subtitle: RichTextField;
+        title: RichTextField;
+      };
+    };
+  };
+};
+
+export const renderHero = (
+  title: RichTextField,
+  subtitle: RichTextField,
+  introduction: RichTextField
+) => (
+  <>
+    <PrismicRichText
+      field={title}
+      components={{
+        heading1: ({ children }) => (
+          <Typography style="h1">{children}</Typography>
+        ),
+      }}
+    />
+    <PrismicRichText
+      field={subtitle}
+      components={{
+        heading2: ({ children }) => (
+          <Typography style="h2">{children}</Typography>
+        ),
+      }}
+    />
+    <Spacer y={4} />
+    <PrismicRichText
+      field={introduction}
+      components={{
+        paragraph: ({ children }) => <Typography>{children}</Typography>,
+      }}
+    />
+  </>
+);
+
+const Home: NextPage<Props> = ({ data }) => {
+  const {
+    introduction: heroIntroduction,
+    subtitle: heroSubtitle,
+    title: heroTitle,
+  } = data.hero.data;
+
+  return (
+    <div>
+      <Head>
+        <title>Peter Bust, Front-end Developer</title>
+      </Head>
+      <main style={{ padding: "10rem", width: "75%" }}>
+        {renderHero(heroTitle, heroSubtitle, heroIntroduction)}
+        <Spacer y={1} />
         <Typography>
           <Link href="/cv">
             <a>CV</a>
           </Link>
         </Typography>
-      </div>
-    </main>
-  </div>
-);
+      </main>
+    </div>
+  );
+};
+
+export const getStaticProps: GetStaticProps = async ({ previewData }) => {
+  const client = createClient({ previewData });
+
+  const document = await client.getSingle("homepage", {
+    fetchLinks: ["hero.title", "hero.subtitle", "hero.introduction"],
+  });
+
+  return {
+    props: { data: document.data },
+  };
+};
 
 export default Home;

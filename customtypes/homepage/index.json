@@ -1,0 +1,27 @@
+{
+  "id": "homepage",
+  "label": "Homepage",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "hero": {
+        "type": "Link",
+        "config": {
+          "label": "Hero",
+          "select": "document",
+          "customtypes": [
+            "hero"
+          ]
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {}
+        }
+      }
+    }
+  }
+}

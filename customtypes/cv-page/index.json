@@ -1,0 +1,34 @@
+{
+  "id": "cv-page",
+  "label": "CV Page",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "hero": {
+        "type": "Link",
+        "config": {
+          "label": "Hero",
+          "select": "document",
+          "customtypes": [
+            "hero"
+          ]
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "curriculum_vitae": {
+              "type": "SharedSlice"
+            },
+            "text": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    }
+  }
+}

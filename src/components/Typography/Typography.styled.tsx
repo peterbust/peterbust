@@ -19,5 +19,4 @@ export const StyledParagraph = styled.p<{ size: Size }>`
   ${Global}
   font-size: ${({ size }) => (size === "normal" ? "1.6vw" : "1.2vw")};
   line-height: 1.4;
-  margin-bottom: ${({ size }) => (size === "normal" ? "1.5rem" : "1rem")}; ;
 `;
