@@ -1,23 +1,30 @@
 {
-  "id": "text",
+  "id": "cv_entry",
   "type": "SharedSlice",
-  "name": "Text",
-  "description": "Text",
+  "name": "CvEntry",
+  "description": "CvEntry",
   "variations": [
     {
       "id": "default",
       "name": "Default",
       "docURL": "...",
       "version": "sktwi1xtmkfgx8626",
-      "description": "Text",
+      "description": "CvEntry",
       "primary": {
-        "text": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": ""
+          }
+        },
+        "description": {
           "type": "StructuredText",
           "config": {
-            "label": "Text",
+            "label": "Description",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "paragraph"
+            "multi": "paragraph,hyperlink"
           }
         }
       },

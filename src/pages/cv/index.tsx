@@ -1,16 +1,17 @@
+import { PrismicRichText } from "@prismicio/react";
 import { SliceZone } from "@prismicio/react";
 import Head from "next/head";
-import Link from "next/link";
 import type { GetStaticProps, NextPage } from "next";
 import type { PrismicDocument, RichTextField } from "@prismicio/types";
 
 import { createClient } from "../../../prismicio";
 import { Spacer, Typography } from "@components/index";
 import { renderHero } from "../index";
-import { CvEntrySlice, TextSlice } from "../../slices/index";
+import { CvEntrySlice } from "../../slices/index";
 
 type Props = {
   data: {
+    contact: RichTextField;
     hero: PrismicDocument & {
       data: {
         introduction: RichTextField;
@@ -18,6 +19,7 @@ type Props = {
         title: RichTextField;
       };
     };
+    introduction: RichTextField;
     slices: any;
   };
 };
@@ -39,32 +41,35 @@ const CV: NextPage<Props> = ({ data }) => {
       <main style={{ padding: "10rem", width: "75%" }}>
         {renderHero(heroTitle, heroSubtitle, heroIntroduction)}
         <Spacer y={1} />
-        <SliceZone
-          slices={[slices[0]]}
-          components={{ text: TextSlice, curriculum_vitae: CvEntrySlice }}
+        <PrismicRichText
+          field={data.introduction}
+          components={{
+            paragraph: ({ children }) => <Typography>{children}</Typography>,
+          }}
         />
         <Spacer y={1} />
-        <SliceZone
-          slices={slices.slice(1)}
-          components={{ text: TextSlice, curriculum_vitae: CvEntrySlice }}
-        />
+        <SliceZone slices={slices} components={{ cv_entry: CvEntrySlice }} />
         <Spacer y={3} />
-        <Typography>
-          More or reach out:{" "}
-          <Link href="/cv">
-            <a>LinkedIn</a>
-          </Link>
-        </Typography>
+        <PrismicRichText
+          field={data.contact}
+          components={{
+            paragraph: ({ children }) => <Typography>{children}</Typography>,
+          }}
+        />
       </main>
     </div>
   );
 };
 
-export const getStaticProps: GetStaticProps = async ({ previewData }) => {
+export const getStaticProps: GetStaticProps = async ({
+  locale,
+  previewData,
+}) => {
   const client = createClient({ previewData });
 
   const document = await client.getSingle("cv-page", {
     fetchLinks: ["hero.title", "hero.subtitle", "hero.introduction"],
+    lang: (locale as Locale) === "en" ? "en-GB" : "nl-NL",
   });
 
   return {

@@ -21,7 +21,20 @@
       }
     },
     "homepage": {},
-    "cv-page": {}
+    "cv-page": {
+      "introduction": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      },
+      "contact": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      }
+    }
   },
   "slices": {
     "CurriculumVitae": {
@@ -46,6 +59,18 @@
       "default": {
         "primary": {
           "text": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    },
+    "CvEntry": {
+      "default": {
+        "primary": {
+          "description": {
             "config": {
               "patternType": "PARAGRAPH",
               "blocks": 1

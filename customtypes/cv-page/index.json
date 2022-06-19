@@ -15,6 +15,24 @@
           ]
         }
       },
+      "introduction": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Introduction",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,hyperlink"
+        }
+      },
+      "contact": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Contact",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph,hyperlink"
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
@@ -23,7 +41,7 @@
             "curriculum_vitae": {
               "type": "SharedSlice"
             },
-            "text": {
+            "cv_entry": {
               "type": "SharedSlice"
             }
           }

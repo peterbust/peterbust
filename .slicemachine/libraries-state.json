@@ -1,31 +1,29 @@
 {
   "slices": {
     "components": {
-      "curriculum_vitae": {
+      "cv_entry": {
         "library": "slices",
-        "id": "curriculum_vitae",
-        "name": "CurriculumVitae",
-        "description": "CurriculumVitae",
+        "id": "cv_entry",
+        "name": "CvEntry",
+        "description": "CvEntry",
         "model": {
-          "id": "curriculum_vitae",
+          "id": "cv_entry",
           "type": "SharedSlice",
-          "name": "CurriculumVitae",
-          "description": "CurriculumVitae",
+          "name": "CvEntry",
+          "description": "CvEntry",
           "variations": [
             {
               "id": "default",
               "name": "Default",
               "docURL": "...",
               "version": "sktwi1xtmkfgx8626",
-              "description": "CurriculumVitae",
+              "description": "CvEntry",
               "primary": {
                 "title": {
-                  "type": "StructuredText",
+                  "type": "Text",
                   "config": {
                     "label": "Title",
-                    "placeholder": "",
-                    "allowTargetBlank": true,
-                    "single": "heading1"
+                    "placeholder": ""
                   }
                 },
                 "description": {
@@ -34,7 +32,7 @@
                     "label": "Description",
                     "placeholder": "",
                     "allowTargetBlank": true,
-                    "multi": "paragraph"
+                    "multi": "paragraph,hyperlink"
                   }
                 }
               },
@@ -47,20 +45,14 @@
           "default": {
             "variation": "default",
             "name": "Default",
-            "slice_type": "curriculum_vitae",
+            "slice_type": "cv_entry",
             "items": [],
             "primary": {
-              "title": [
-                {
-                  "type": "heading1",
-                  "text": "Visualize cutting-edge models",
-                  "spans": []
-                }
-              ],
+              "title": "transform value-added channels",
               "description": [
                 {
                   "type": "paragraph",
-                  "text": "Duis proident enim culpa proident occaecat sint proident do sint.",
+                  "text": "Eu aliquip eu veniam anim do do magna adipisicing enim laboris sint do.",
                   "spans": []
                 }
               ]
@@ -73,71 +65,9 @@
         },
         "screenshotPaths": {
           "default": {
-            "path": "/Users/peterbust/Development/peterbust/.slicemachine/assets/slices/CurriculumVitae/default/preview.png",
+            "path": "/Users/peterbust/Development/peterbust/.slicemachine/assets/slices/CvEntry/default/preview.png",
             "width": 800,
-            "height": 37
-          }
-        }
-      },
-      "text": {
-        "library": "slices",
-        "id": "text",
-        "name": "Text",
-        "description": "Text",
-        "model": {
-          "id": "text",
-          "type": "SharedSlice",
-          "name": "Text",
-          "description": "Text",
-          "variations": [
-            {
-              "id": "default",
-              "name": "Default",
-              "docURL": "...",
-              "version": "sktwi1xtmkfgx8626",
-              "description": "Text",
-              "primary": {
-                "text": {
-                  "type": "StructuredText",
-                  "config": {
-                    "label": "Text",
-                    "placeholder": "",
-                    "allowTargetBlank": true,
-                    "multi": "paragraph"
-                  }
-                }
-              },
-              "items": {},
-              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
-            }
-          ]
-        },
-        "mocks": {
-          "default": {
-            "variation": "default",
-            "name": "Default",
-            "slice_type": "text",
-            "items": [],
-            "primary": {
-              "text": [
-                {
-                  "type": "paragraph",
-                  "text": "Et culpa mollit deserunt Lorem duis officia enim adipisicing pariatur reprehenderit do. Occaecat elit occaecat cupidatat ut pariatur occaecat dolor non dolor cupidatat magna nulla et occaecat sit.",
-                  "spans": []
-                }
-              ]
-            }
-          }
-        },
-        "meta": {
-          "fileName": "index",
-          "extension": "js"
-        },
-        "screenshotPaths": {
-          "default": {
-            "path": "/Users/peterbust/Development/peterbust/.slicemachine/assets/slices/Text/default/preview.png",
-            "width": 800,
-            "height": 37
+            "height": 51
           }
         }
       }

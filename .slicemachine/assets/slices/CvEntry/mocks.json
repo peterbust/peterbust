@@ -1,0 +1,18 @@
+[
+  {
+    "variation": "default",
+    "name": "Default",
+    "slice_type": "cv_entry",
+    "items": [],
+    "primary": {
+      "title": "transform value-added channels",
+      "description": [
+        {
+          "type": "paragraph",
+          "text": "Eu aliquip eu veniam anim do do magna adipisicing enim laboris sint do.",
+          "spans": []
+        }
+      ]
+    }
+  }
+]

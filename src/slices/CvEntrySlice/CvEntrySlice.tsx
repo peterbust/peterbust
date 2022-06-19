@@ -13,7 +13,7 @@ type Props = {
 
 const CvEntrySlice = ({ slice }: Props) => (
   <Accordion>
-    <AccordionSummary label={slice.primary.title[0].text} />
+    <AccordionSummary label={slice.primary.title} />
     <AccordionDetails>
       <PrismicRichText
         field={slice.primary.description}

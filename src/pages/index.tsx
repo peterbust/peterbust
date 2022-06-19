@@ -76,11 +76,15 @@ const Home: NextPage<Props> = ({ data }) => {
   );
 };
 
-export const getStaticProps: GetStaticProps = async ({ previewData }) => {
+export const getStaticProps: GetStaticProps = async ({
+  locale,
+  previewData,
+}) => {
   const client = createClient({ previewData });
 
   const document = await client.getSingle("homepage", {
     fetchLinks: ["hero.title", "hero.subtitle", "hero.introduction"],
+    lang: (locale as Locale) === "en" ? "en-GB" : "nl-NL",
   });
 
   return {
