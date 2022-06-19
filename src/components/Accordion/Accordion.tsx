@@ -6,6 +6,7 @@ import {
   useMemo,
   useState,
 } from "react";
+import type { SyntheticEvent } from "react";
 
 import { stringToSlug } from "@utils/index";
 import { StyledContainer } from "./Accordion.styled";
@@ -26,7 +27,7 @@ const DsAccordion = forwardRef<HTMLDivElement, Props>(function DsAccordion(
    * And expose change to parent
    */
   const handleChange = useCallback(
-    (e) => {
+    (e: SyntheticEvent) => {
       setExpanded(!expanded);
       if (onChange) onChange(e, !expanded);
     },
