@@ -32,13 +32,10 @@ export const StyledHeading = styled.h1`
 
 export const StyledParagraph = styled.p<{ size: Size }>`
   ${Global}
-  font-size: ${({ size }) => (size === "normal" ? rem(16) : rem(14))};
+  font-size: ${({ size }) => (size === "normal" ? rem(18) : rem(16))};
   line-height: 1.4;
 
   ${({ size, theme: { device } }) => css`
-    @media ${device.sm} {
-      font-size: ${size === "normal" ? rem(18) : rem(16)};
-    }
     @media ${device.md} {
       font-size: ${size === "normal" ? rem(20) : rem(16)};
     }

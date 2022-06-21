@@ -1,13 +1,15 @@
 import { PrismicRichText } from "@prismicio/react";
 import { SliceZone } from "@prismicio/react";
 import Head from "next/head";
+import Link from "next/link";
 import type { GetStaticProps, NextPage } from "next";
 import type { PrismicDocument, RichTextField } from "@prismicio/types";
 
-import { createClient } from "../../../prismicio";
 import { Container, Spacer, Typography } from "@components/index";
-import { renderHero } from "../index";
+import { createClient } from "../../../prismicio";
 import { CvEntrySlice } from "../../slices/index";
+import { renderHero } from "../index";
+import { RenderLinkAlternate } from "../index";
 
 type Props = {
   data: {
@@ -37,6 +39,7 @@ const CV: NextPage<Props> = ({ data }) => {
     <div>
       <Head>
         <title>Peter Bust, Front-end Developer | CV</title>
+        {RenderLinkAlternate("/cv")}
       </Head>
       <Container as="main">
         {renderHero(heroTitle, heroSubtitle, heroIntroduction)}
@@ -47,9 +50,9 @@ const CV: NextPage<Props> = ({ data }) => {
             paragraph: ({ children }) => <Typography>{children}</Typography>,
           }}
         />
-        <Spacer y={0.75} breakpoints={{ md: { y: 1 } }} />
+        <Spacer y={1} breakpoints={{ md: { y: 2 } }} />
         <SliceZone slices={slices} components={{ cv_entry: CvEntrySlice }} />
-        <Spacer y={1.5} breakpoints={{ md: { y: 2 } }} />
+        <Spacer y={2} breakpoints={{ md: { y: 3.5 } }} />
         <PrismicRichText
           field={data.contact}
           components={{

@@ -6,6 +6,7 @@ import type { AppProps } from "next/app";
 
 import { linkResolver, repositoryName } from "../../prismicio";
 import { GlobalStyle, Minireset, themes } from "@styles/index";
+import { Language } from "@components/index";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -21,6 +22,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <ThemeProvider theme={themes.default}>
           <Minireset />
           <GlobalStyle />
+          <Language />
           <Component {...pageProps} />
         </ThemeProvider>
       </PrismicPreview>
