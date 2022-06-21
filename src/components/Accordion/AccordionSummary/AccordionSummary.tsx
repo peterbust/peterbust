@@ -5,12 +5,7 @@ import { StyledButton, StyledIndicator } from "./AccordionSummary.styled";
 import { Typography } from "@components/index";
 import type { Props } from "./AccordionSummary.types";
 
-const AccordionSummary = ({
-  className,
-  headinglevel = 3,
-  label,
-  ...props
-}: Props) => {
+const AccordionSummary = ({ headinglevel = 3, label, ...props }: Props) => {
   // Hooks
   const { toggle, expanded } = useContext(AccordionContext);
 

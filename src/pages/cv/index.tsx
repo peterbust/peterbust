@@ -1,15 +1,12 @@
-import { PrismicRichText } from "@prismicio/react";
-import { SliceZone } from "@prismicio/react";
+import { PrismicRichText, SliceZone } from "@prismicio/react";
 import Head from "next/head";
-import Link from "next/link";
 import type { GetStaticProps, NextPage } from "next";
 import type { PrismicDocument, RichTextField } from "@prismicio/types";
 
 import { Container, Spacer, Typography } from "@components/index";
 import { createClient } from "../../../prismicio";
 import { CvEntrySlice } from "../../slices/index";
-import { renderHero } from "../index";
-import { RenderLinkAlternate } from "../index";
+import { renderHero, RenderLinkAlternate } from "../index";
 
 type Props = {
   data: {

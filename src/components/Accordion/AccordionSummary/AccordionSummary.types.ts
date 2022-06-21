@@ -1,6 +1,5 @@
 import type { ComponentPropsWithoutRef } from "react";
 
-// export type Props = StyledComponent<"button", DefaultTheme> & {
 export type Props = ComponentPropsWithoutRef<"button"> & {
   /**
    * Heading level to use.

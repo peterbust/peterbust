@@ -13,7 +13,7 @@ import type { Context, Props } from "./Accordion.types";
 
 export const AccordionContext = createContext({} as Context);
 
-const DsAccordion = ({ children, className, onChange, ...props }: Props) => {
+const DsAccordion = ({ children, onChange, ...props }: Props) => {
   const [Summary, Details] = children ?? [];
   const [expanded, setExpanded] = useState(false);
 
