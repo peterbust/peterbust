@@ -1,7 +1,6 @@
 import {
   cloneElement,
   createContext,
-  forwardRef,
   useCallback,
   useMemo,
   useState,
@@ -14,11 +13,7 @@ import type { Context, Props } from "./Accordion.types";
 
 export const AccordionContext = createContext({} as Context);
 
-const DsAccordion = forwardRef<HTMLDivElement, Props>(function DsAccordion(
-  props,
-  forwardRef
-) {
-  const { children, className, onChange, ...remainingProps } = props;
+const DsAccordion = ({ children, className, onChange, ...props }: Props) => {
   const [Summary, Details] = children ?? [];
   const [expanded, setExpanded] = useState(false);
 
@@ -57,8 +52,7 @@ const DsAccordion = forwardRef<HTMLDivElement, Props>(function DsAccordion(
   };
 
   return (
-    // @ts-ignore
-    <StyledContainer ref={forwardRef} {...remainingProps}>
+    <StyledContainer {...props}>
       <AccordionContext.Provider value={contextValue}>
         {cloneElement(Summary, {
           "aria-controls": determineId("details"),
@@ -70,9 +64,10 @@ const DsAccordion = forwardRef<HTMLDivElement, Props>(function DsAccordion(
         "aria-labelledby": determineId("summary"),
         expanded,
         id: determineId("details"),
+        role: "region",
       })}
     </StyledContainer>
   );
-});
+};
 
 export default DsAccordion;

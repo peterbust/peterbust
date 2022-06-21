@@ -1,24 +1,18 @@
-import { forwardRef } from "react";
-
-import { StyledContainer } from "./AccordionDetails.styled";
+import styled, { css } from "styled-components";
 import type { Props } from "./AccordionDetails.types";
 
-const AccordionDetails = forwardRef<HTMLDivElement, Props>(
-  function DsAccordionDetails(props, forwardRef) {
-    const { children, className, expanded = false, ...remainingProps } = props;
+export const AccordionDetails = styled.div<Props>`
+  display: ${({ expanded }) => (expanded ? "block" : "none")};
+  padding-bottom: 1.5rem;
 
-    return (
-      <StyledContainer
-        // @ts-ignore @todo
-        ref={forwardRef}
-        role="region"
-        {...{ expanded }}
-        {...remainingProps}
-      >
-        {children}
-      </StyledContainer>
-    );
-  }
-);
+  ${({ theme: { device } }) => css`
+    @media ${device.md} {
+      padding-bottom: 2rem;
+    }
+    @media ${device.lg} {
+      padding-bottom: 3rem;
+    }
+  `};
+`;
 
 export default AccordionDetails;

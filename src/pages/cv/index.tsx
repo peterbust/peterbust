@@ -5,7 +5,7 @@ import type { GetStaticProps, NextPage } from "next";
 import type { PrismicDocument, RichTextField } from "@prismicio/types";
 
 import { createClient } from "../../../prismicio";
-import { Spacer, Typography } from "@components/index";
+import { Container, Spacer, Typography } from "@components/index";
 import { renderHero } from "../index";
 import { CvEntrySlice } from "../../slices/index";
 
@@ -38,25 +38,25 @@ const CV: NextPage<Props> = ({ data }) => {
       <Head>
         <title>Peter Bust, Front-end Developer | CV</title>
       </Head>
-      <main style={{ padding: "10rem", width: "75%" }}>
+      <Container as="main">
         {renderHero(heroTitle, heroSubtitle, heroIntroduction)}
-        <Spacer y={1} />
+        <Spacer y={0.75} breakpoints={{ md: { y: 1 } }} />
         <PrismicRichText
           field={data.introduction}
           components={{
             paragraph: ({ children }) => <Typography>{children}</Typography>,
           }}
         />
-        <Spacer y={1} />
+        <Spacer y={0.75} breakpoints={{ md: { y: 1 } }} />
         <SliceZone slices={slices} components={{ cv_entry: CvEntrySlice }} />
-        <Spacer y={3} />
+        <Spacer y={1.5} breakpoints={{ md: { y: 2 } }} />
         <PrismicRichText
           field={data.contact}
           components={{
             paragraph: ({ children }) => <Typography>{children}</Typography>,
           }}
         />
-      </main>
+      </Container>
     </div>
   );
 };

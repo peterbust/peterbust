@@ -1,10 +1,15 @@
-import { ReactNode } from "react";
+import { ComponentProps, ReactNode } from "react";
 
-export type Size = "normal" | "small";
+type ExtendsComponentProps =
+  | ComponentProps<"p">
+  | ComponentProps<"h1">
+  | ComponentProps<"h2">
+  | ComponentProps<"h3">
+  | ComponentProps<"h4">
+  | ComponentProps<"h5">
+  | ComponentProps<"h6">;
 
-export type Style = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p";
-
-export type Props = {
+export type Props = ExtendsComponentProps & {
   /**
    * Root element.
    */
@@ -25,3 +30,7 @@ export type Props = {
    */
   style?: Style;
 };
+
+export type Size = "normal" | "small";
+
+export type Style = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p";

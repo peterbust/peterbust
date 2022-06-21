@@ -1,35 +1,35 @@
-import { forwardRef, useContext } from "react";
+import { useContext } from "react";
 
 import { AccordionContext } from "../Accordion";
-import { StyledButton } from "./AccordionSummary.styled";
+import { StyledButton, StyledIndicator } from "./AccordionSummary.styled";
 import { Typography } from "@components/index";
 import type { Props } from "./AccordionSummary.types";
 
-const AccordionSummary = forwardRef<HTMLButtonElement, Props>(
-  function DsAccordionSummary(props, forwardRef) {
-    const { className, headinglevel = 3, label, ...remainingProps } = props;
+const AccordionSummary = ({
+  className,
+  headinglevel = 3,
+  label,
+  ...props
+}: Props) => {
+  // Hooks
+  const { toggle, expanded } = useContext(AccordionContext);
 
-    // Hooks
-    const { toggle } = useContext(AccordionContext);
+  // Renders
+  const Heading = `h${headinglevel}` as "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 
-    // Renders
-    const Heading = `h${headinglevel}` as
-      | "h1"
-      | "h2"
-      | "h3"
-      | "h4"
-      | "h5"
-      | "h6";
-
-    return (
-      <Heading>
-        {/* @ts-ignore */}
-        <StyledButton onClick={toggle} ref={forwardRef} {...remainingProps}>
-          <Typography as="span">{label}</Typography>
-        </StyledButton>
-      </Heading>
-    );
-  }
-);
+  return (
+    <Heading>
+      <StyledButton onClick={toggle} {...props}>
+        <Typography as="span" className="name">
+          {label}
+        </Typography>
+        <StyledIndicator isActive={expanded}>
+          <span></span>
+          <span></span>
+        </StyledIndicator>
+      </StyledButton>
+    </Heading>
+  );
+};
 
 export default AccordionSummary;

@@ -1,29 +1,8 @@
-import React from "react";
-import { PrismicRichText } from "@prismicio/react";
-
-import {
-  Accordion,
-  AccordionDetails,
-  AccordionSummary,
-  Typography,
-} from "@components/index";
+import { CvEntrySlice } from "../../src/slices/index";
 
 const CvEntry = ({ slice }) => (
   <section>
-    <Accordion>
-      <AccordionSummary label={slice.primary.title} />
-      <AccordionDetails>
-        <PrismicRichText
-          field={slice.primary.description}
-          components={{
-            paragraph: ({ children }) => (
-              <Typography size="small">{children}</Typography>
-            ),
-          }}
-        />
-      </AccordionDetails>
-    </Accordion>
-
+    <CvEntrySlice slice={slice} />
     <style jsx>{`
       section {
         max-width: 800px;

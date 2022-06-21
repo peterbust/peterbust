@@ -4,8 +4,8 @@ import Link from "next/link";
 import type { GetStaticProps, NextPage } from "next";
 import type { PrismicDocument, RichTextField } from "@prismicio/types";
 
+import { Container, Spacer, Typography } from "@components/index";
 import { createClient } from "../../prismicio";
-import { Spacer, Typography } from "@components/index";
 
 type Props = {
   data: {
@@ -41,7 +41,7 @@ export const renderHero = (
         ),
       }}
     />
-    <Spacer y={4} />
+    <Spacer y={2} breakpoints={{ md: { y: 3 }, lg: { y: 4.5 } }} />
     <PrismicRichText
       field={introduction}
       components={{
@@ -63,15 +63,15 @@ const Home: NextPage<Props> = ({ data }) => {
       <Head>
         <title>Peter Bust, Front-end Developer</title>
       </Head>
-      <main style={{ padding: "10rem", width: "75%" }}>
+      <Container as="main">
         {renderHero(heroTitle, heroSubtitle, heroIntroduction)}
-        <Spacer y={1} />
+        <Spacer y={0.75} breakpoints={{ md: { y: 1 } }} />
         <Typography>
           <Link href="/cv">
             <a>CV</a>
           </Link>
         </Typography>
-      </main>
+      </Container>
     </div>
   );
 };

@@ -1,4 +1,8 @@
-import type { ComponentProps, ReactElement, SyntheticEvent } from "react";
+import type {
+  ComponentPropsWithoutRef,
+  ReactElement,
+  SyntheticEvent,
+} from "react";
 
 import type { Props as AccordionDetailsProps } from "./AccordionDetails/AccordionDetails.types";
 import type { Props as AccordionSummaryProps } from "./AccordionSummary/AccordionSummary.types";
@@ -8,7 +12,7 @@ export type Context = {
   toggle: (e: SyntheticEvent) => void;
 };
 
-export type Props = ComponentProps<"div"> & {
+export type Props = ComponentPropsWithoutRef<"div"> & {
   /**
    * Accepted children.
    */

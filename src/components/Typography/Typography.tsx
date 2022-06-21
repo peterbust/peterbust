@@ -12,7 +12,8 @@ const Typography = ({
   if (style === "p") StyledComponent = StyledParagraph;
 
   return (
-    <StyledComponent as={as ?? style} {...{ size }} {...props}>
+    // @ts-ignore
+    <StyledComponent as={as ?? style} size={size} {...props}>
       {children}
     </StyledComponent>
   );

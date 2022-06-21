@@ -1,10 +1,5 @@
-import type { ComponentProps } from "react";
+import { ComponentPropsWithoutRef } from "react";
 
-export type Props = ComponentProps<"div"> & {
-  /**
-   * If accordion is expanded or not.
-   * Controlled by DsAccordion.
-   * @default false
-   */
+export type Props = ComponentPropsWithoutRef<"div"> & {
   expanded?: boolean;
 };
