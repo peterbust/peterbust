@@ -19,7 +19,7 @@ const Example = () => {
   );
 };
 
-describe("useMediaQueries() util through <Example /> component", () => {
+describe("'useMediaQueries' utility", () => {
   it("renders different paragraphs for breakpoint 300", async () => {
     window = Object.assign(window, { innerWidth: 300 });
 

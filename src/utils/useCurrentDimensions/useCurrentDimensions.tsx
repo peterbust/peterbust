@@ -3,10 +3,8 @@ import { useEffect, useState } from "react";
 import { debounce } from "@utils/index";
 
 /**
- * Hook to determine current window dimensions
- * Values are updated on window resize
- *
- * @returns The current window width and height
+ * Hook to determine current window dimensions/
+ * Values are updated on window resize.
  */
 function useCurrentDimensions(): { width: number; height: number } {
   const [height, setHeight] = useState(0);

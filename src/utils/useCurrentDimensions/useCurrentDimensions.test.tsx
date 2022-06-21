@@ -14,7 +14,7 @@ const Example = () => {
   );
 };
 
-describe("useCurrentDimensions() util through <Example /> component", () => {
+describe("'useCurrentDimensions' utility", () => {
   it("accurately returns window innerWidth and innerHeight", async () => {
     // Set window dimensions and check hook values
     window = Object.assign(window, { innerWidth: 500, innerHeight: 600 });

@@ -1,6 +1,6 @@
 /**
- * Converts a px value to rem
+ * Converts a 'px' value to 'rem'.
  */
-export default function rem(n: number): string {
-  return `${n / 16}rem`;
-}
+const rem = (n: number) => `${n / 16}rem`;
+
+export default rem;

@@ -1,9 +1,8 @@
 /**
- * Capitalize the first letter of a string
- *
- * @param s String to capitalize
- * @returns Capitalized string
+ * Capitalizes the first character of a string.
  */
-export default function capitalizeFirst(s: string) {
+const capitalizeFirst = (s: string) => {
   return s.charAt(0).toUpperCase() + s.slice(1);
-}
+};
+
+export default capitalizeFirst;

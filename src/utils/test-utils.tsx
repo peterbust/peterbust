@@ -1,15 +1,16 @@
 import { render } from "@testing-library/react";
 import { ThemeProvider } from "styled-components";
-import React from "react";
+import { Fragment } from "react";
 
 import { GlobalStyle, Minireset, themes } from "@styles/index";
 
-// @ts-ignore
-const AllTheProviders = ({ children }) => (
+type Props = { children: JSX.Element };
+
+const AllTheProviders = ({ children }: Props) => (
   <ThemeProvider theme={themes.default}>
     <Minireset />
     <GlobalStyle />
-    <React.Fragment>{children}</React.Fragment>
+    <Fragment>{children}</Fragment>
   </ThemeProvider>
 );
 

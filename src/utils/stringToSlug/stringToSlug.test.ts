@@ -1,6 +1,6 @@
 import stringToSlug from "./stringToSlug";
 
-describe("stringToSlug util", () => {
+describe("'stringToSlug' utility", () => {
   it("should convert strings to url-friendly slugs", () => {
     expect(stringToSlug("Hello World")).toBe("hello-world");
     expect(stringToSlug(" Hello    WORLD    ")).toBe("hello-world");

@@ -1,5 +1,5 @@
 /**
- * Converts a string to a slug value (url-friendly string)
+ * Converts a string to a slug value (url-friendly string).
  */
 const stringToSlug = (str: string) => {
   str = str.trim().toLowerCase();

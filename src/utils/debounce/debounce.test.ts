@@ -2,7 +2,7 @@ import debounce from "./debounce";
 
 jest.useFakeTimers();
 
-describe("debounce()", () => {
+describe("'debounce' utility", () => {
   let func: jest.Mock;
   let debouncedFunc: () => void;
 

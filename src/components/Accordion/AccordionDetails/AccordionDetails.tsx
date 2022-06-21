@@ -9,6 +9,7 @@ export const AccordionDetails = styled.div<Props>`
     @media ${device.md} {
       padding-bottom: 2rem;
     }
+
     @media ${device.lg} {
       padding-bottom: 3rem;
     }

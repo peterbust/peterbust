@@ -16,7 +16,7 @@ describe("Accordion component", () => {
     );
 
     const heading = screen.getByRole("heading");
-    const region = screen.getByRole("region");
+    const region = screen.getByRole("region", { hidden: true });
 
     expect(heading.tagName).toBe("H3");
     expect(heading).toHaveTextContent("Question");
@@ -58,7 +58,7 @@ describe("Accordion component", () => {
     );
 
     const button = screen.getByRole("button");
-    const region = screen.getByRole("region");
+    const region = screen.getByRole("region", { hidden: true });
 
     expect(button).toHaveAttribute("id", "accordion-summary-question");
     expect(button).toHaveAttribute(
@@ -87,7 +87,7 @@ describe("Accordion component", () => {
     );
 
     const button = screen.getByRole("button");
-    const region = screen.getByRole("region");
+    const region = screen.getByRole("region", { hidden: true });
 
     expect(button).toHaveAttribute("id", "test1");
     expect(button).toHaveAttribute("aria-controls", "test2");

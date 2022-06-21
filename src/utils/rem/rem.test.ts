@@ -1,6 +1,6 @@
 import rem from "./rem";
 
-describe("rem() utility", () => {
+describe("'rem' utility", () => {
   it("should calculate given number values to rem", () => {
     const outputs = [rem(-99), rem(0), rem(8), rem(32), rem(99)];
 
