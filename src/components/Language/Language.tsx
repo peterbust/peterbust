@@ -10,7 +10,7 @@ const Language = () => {
 
   return (
     <Link href={pathname} locale={otherLocale} passHref>
-      <StyledLink tabIndex={1}>
+      <StyledLink tabIndex={0}>
         <Typography as="span" size="small">
           {otherLocale.toUpperCase()}
         </Typography>

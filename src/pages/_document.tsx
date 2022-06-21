@@ -34,6 +34,10 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <link rel="icon" href="/favicon.ico" />
+          <meta
+            name="description"
+            content="Peter Bust, Freelance Front-end Developer in Eindhoven, The Netherlands"
+          ></meta>
         </Head>
         <body>
           <Main />
