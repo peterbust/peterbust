@@ -1,0 +1,52 @@
+{
+  "id": "cv-page",
+  "label": "CV Page",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "hero": {
+        "type": "Link",
+        "config": {
+          "label": "Hero",
+          "select": "document",
+          "customtypes": [
+            "hero"
+          ]
+        }
+      },
+      "introduction": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Introduction",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,hyperlink"
+        }
+      },
+      "contact": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Contact",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph,hyperlink"
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "curriculum_vitae": {
+              "type": "SharedSlice"
+            },
+            "cv_entry": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    }
+  }
+}

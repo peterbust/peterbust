@@ -1,0 +1,76 @@
+{
+  "slices": {
+    "components": {
+      "cv_entry": {
+        "library": "slices",
+        "id": "cv_entry",
+        "name": "CvEntry",
+        "description": "CvEntry",
+        "model": {
+          "id": "cv_entry",
+          "type": "SharedSlice",
+          "name": "CvEntry",
+          "description": "CvEntry",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "CvEntry",
+              "primary": {
+                "title": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Title",
+                    "placeholder": ""
+                  }
+                },
+                "description": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Description",
+                    "placeholder": "",
+                    "allowTargetBlank": true,
+                    "multi": "paragraph,hyperlink"
+                  }
+                }
+              },
+              "items": {},
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "name": "Default",
+            "slice_type": "cv_entry",
+            "items": [],
+            "primary": {
+              "title": "transform value-added channels",
+              "description": [
+                {
+                  "type": "paragraph",
+                  "text": "Eu aliquip eu veniam anim do do magna adipisicing enim laboris sint do.",
+                  "spans": []
+                }
+              ]
+            }
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {
+          "default": {
+            "path": "/Users/peterbust/Development/peterbust/.slicemachine/assets/slices/CvEntry/default/preview.png",
+            "width": 800,
+            "height": 51
+          }
+        }
+      }
+    }
+  }
+}

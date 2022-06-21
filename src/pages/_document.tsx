@@ -1,28 +1,20 @@
 import { ServerStyleSheet } from "styled-components";
-import Document, { Html, Head, Main, NextScript } from "next/document";
+import Document, {
+  DocumentContext,
+  DocumentInitialProps,
+  Head,
+  Html,
+  Main,
+  NextScript,
+} from "next/document";
 
 class MyDocument extends Document {
-  render() {
-    return (
-      <Html lang="en">
-        <Head>
-          <link rel="icon" href="/favicon.ico" />
-          <meta
-            name="description"
-            content="Senior front-end developer favoring React"
-          />
-        </Head>
-        <body>
-          <Main />
-          <NextScript />
-        </body>
-      </Html>
-    );
-  }
   // @todo replace with Rust support
   // https://nextjs.org/docs/advanced-features/compiler#styled-components
   // @ts-ignore
-  static async getInitialProps(ctx) {
+  static async getInitialProps(
+    ctx: DocumentContext
+  ): Promise<DocumentInitialProps> {
     const sheet = new ServerStyleSheet();
     const originalRenderPage = ctx.renderPage;
 
@@ -37,6 +29,7 @@ class MyDocument extends Document {
       const initialProps = await Document.getInitialProps(ctx);
       return {
         ...initialProps,
+        // @ts-ignore
         styles: (
           <>
             {initialProps.styles}
@@ -47,6 +40,20 @@ class MyDocument extends Document {
     } finally {
       sheet.seal();
     }
+  }
+
+  render() {
+    return (
+      <Html>
+        <Head>
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    );
   }
 }
 
