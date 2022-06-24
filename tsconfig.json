@@ -12,17 +12,22 @@
     "moduleResolution": "node",
     "noEmit": true,
     "paths": {
-      "@components/*": ["components/*"],
-      "@lib/*": ["lib/*"],
-      "@pages/*": ["pages/*"],
-      "@styles/*": ["styles/*"],
-      "@utils/*": ["utils/*"]
+      "@components": ["components/index"],
+      "@lib": ["lib/index"],
+      "@pages": ["pages/index"],
+      "@styles": ["styles/index"],
+      "@utils": ["utils/index"]
     },
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
     "target": "es5"
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "slices/CvEntry/index.js"
+  ],
   "exclude": ["node_modules"]
 }

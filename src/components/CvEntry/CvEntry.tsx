@@ -1,28 +1,19 @@
 import { PrismicRichText } from "@prismicio/react";
-import styled from "styled-components";
 
 import {
   Accordion,
   AccordionDetails,
   AccordionSummary,
   Typography,
-} from "@components/index";
+} from "@components";
+import { Props } from "./CvEntry.types";
+import { StyledDetailsWrapper } from "./CvEntry.styled";
 
-type Props = {
-  slice: any;
-};
-
-const StyledWrapper = styled.div`
-  p:not(:last-child) {
-    margin-bottom: 0.75rem;
-  }
-`;
-
-const CvEntrySlice = ({ slice }: Props) => (
+const CvEntry = ({ slice }: Props) => (
   <Accordion>
     <AccordionSummary label={slice.primary.title} />
     <AccordionDetails>
-      <StyledWrapper>
+      <StyledDetailsWrapper>
         <PrismicRichText
           field={slice.primary.description}
           components={{
@@ -31,9 +22,9 @@ const CvEntrySlice = ({ slice }: Props) => (
             ),
           }}
         />
-      </StyledWrapper>
+      </StyledDetailsWrapper>
     </AccordionDetails>
   </Accordion>
 );
 
-export default CvEntrySlice;
+export default CvEntry;

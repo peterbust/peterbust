@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 import { Size } from "./Typography.types";
-import { rem } from "@utils/index";
+import { rem } from "@utils";
 
 const Global = css`
   color: ${({ theme }) => theme.colors.black};

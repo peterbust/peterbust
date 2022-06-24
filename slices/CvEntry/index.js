@@ -1,12 +1,13 @@
-import { CvEntrySlice } from "../../src/slices/index";
+import { CvEntry as CvEntryComponent } from "../../src/components/index";
 
 const CvEntry = ({ slice }) => (
   <section>
-    <CvEntrySlice slice={slice} />
+    <CvEntryComponent slice={slice} />
     <style jsx>{`
       section {
+        margin: 4rem auto;
         max-width: 800px;
-        margin: 4em auto;
+        padding: 1rem;
       }
     `}</style>
   </section>

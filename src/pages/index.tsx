@@ -5,7 +5,7 @@ import type { GetStaticProps, NextPage } from "next";
 import { useRouter } from "next/router";
 import type { PrismicDocument, RichTextField } from "@prismicio/types";
 
-import { Container, Spacer, Typography } from "@components/index";
+import { Container, Spacer, Typography } from "@components";
 import { createClient } from "../../prismicio";
 
 type Props = {

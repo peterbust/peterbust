@@ -7,7 +7,7 @@ import {
 } from "react";
 import type { SyntheticEvent } from "react";
 
-import { stringToSlug } from "@utils/index";
+import { stringToSlug } from "@utils";
 import { StyledContainer } from "./Accordion.styled";
 import type { Context, Props } from "./Accordion.types";
 

@@ -1,9 +1,7 @@
 import userEvent from "@testing-library/user-event";
 
-import { render, screen } from "@utils/test-utils";
-import Accordion from "./Accordion";
-import AccordionDetails from "./AccordionDetails/AccordionDetails";
-import AccordionSummary from "./AccordionSummary/AccordionSummary";
+import { render, screen } from "../../test-utils";
+import { Accordion, AccordionDetails, AccordionSummary } from "@components";
 
 describe("Accordion component", () => {
   it("should render correctly", () => {

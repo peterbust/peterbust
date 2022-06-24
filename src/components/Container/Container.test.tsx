@@ -1,4 +1,4 @@
-import { render } from "@utils/test-utils";
+import { render } from "../../test-utils";
 import Container from "./Container";
 
 describe("Container component", () => {

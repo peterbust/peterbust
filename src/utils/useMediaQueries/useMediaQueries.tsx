@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 
-import { breakpoints } from "@styles/themes/default";
-import { useCurrentDimensions } from "@utils/index";
-import type { BreakpointHook } from "@styles/themes/styled";
+import { breakpoints } from "../../styles/themes/default";
+import { useCurrentDimensions } from "@utils";
+import type { BreakpointHook } from "../../styles/themes/styled";
 
 type MediaQueries = {
   [key in BreakpointHook]: boolean;

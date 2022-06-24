@@ -2,7 +2,7 @@ import { useContext } from "react";
 
 import { AccordionContext } from "../Accordion";
 import { StyledButton, StyledIndicator } from "./AccordionSummary.styled";
-import { Typography } from "@components/index";
+import { Typography } from "@components";
 import type { Props } from "./AccordionSummary.types";
 
 const AccordionSummary = ({ headinglevel = 3, label, ...props }: Props) => {

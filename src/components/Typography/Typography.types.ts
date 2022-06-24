@@ -1,15 +1,15 @@
-import { ComponentProps, ReactNode } from "react";
+import { ComponentPropsWithRef, ReactNode } from "react";
 
-type ExtendsComponentProps =
-  | ComponentProps<"p">
-  | ComponentProps<"h1">
-  | ComponentProps<"h2">
-  | ComponentProps<"h3">
-  | ComponentProps<"h4">
-  | ComponentProps<"h5">
-  | ComponentProps<"h6">;
+type ComponentProps =
+  | ComponentPropsWithRef<"p">
+  | ComponentPropsWithRef<"h1">
+  | ComponentPropsWithRef<"h2">
+  | ComponentPropsWithRef<"h3">
+  | ComponentPropsWithRef<"h4">
+  | ComponentPropsWithRef<"h5">
+  | ComponentPropsWithRef<"h6">;
 
-export type Props = ExtendsComponentProps & {
+export type Props = ComponentProps & {
   /**
    * Root element.
    */

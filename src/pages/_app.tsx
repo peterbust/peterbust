@@ -5,8 +5,8 @@ import Link from "next/link";
 import type { AppProps } from "next/app";
 
 import { linkResolver, repositoryName } from "../../prismicio";
-import { GlobalStyle, Minireset, themes } from "@styles/index";
-import { Language } from "@components/index";
+import { GlobalStyle, Minireset, themes } from "@styles";
+import { Language } from "@components";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

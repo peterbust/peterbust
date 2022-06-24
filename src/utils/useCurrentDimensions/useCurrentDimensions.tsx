@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { debounce } from "@utils/index";
+import { debounce } from "@utils";
 
 /**
  * Hook to determine current window dimensions/

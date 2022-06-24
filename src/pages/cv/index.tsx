@@ -3,9 +3,8 @@ import Head from "next/head";
 import type { GetStaticProps, NextPage } from "next";
 import type { PrismicDocument, RichTextField } from "@prismicio/types";
 
-import { Container, Spacer, Typography } from "@components/index";
+import { Container, CvEntry, Spacer, Typography } from "@components";
 import { createClient } from "../../../prismicio";
-import { CvEntrySlice } from "../../slices/index";
 import { renderHero, RenderLinkAlternate } from "../index";
 
 type Props = {
@@ -48,7 +47,7 @@ const CV: NextPage<Props> = ({ data }) => {
           }}
         />
         <Spacer y={1} breakpoints={{ md: { y: 2 } }} />
-        <SliceZone slices={slices} components={{ cv_entry: CvEntrySlice }} />
+        <SliceZone slices={slices} components={{ cv_entry: CvEntry }} />
         <Spacer y={2} breakpoints={{ md: { y: 3.5 } }} />
         <PrismicRichText
           field={data.contact}

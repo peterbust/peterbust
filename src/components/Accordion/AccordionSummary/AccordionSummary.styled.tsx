@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-import { rem } from "@utils/index";
+import { rem } from "@utils";
 
 export const StyledButton = styled.button`
   align-items: center;

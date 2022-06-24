@@ -18,11 +18,10 @@ module.exports = {
     "^.+\\.(jpg|jpeg|png|gif|webp|svg)$": "<rootDir>/__mocks__/fileMock.js",
     // Handle absolute imports and module path aliases
     // https://nextjs.org/docs/testing#jest-and-react-testing-library
-    "^@components/(.*)$": "<rootDir>/src/components/$1",
-    "^@lib/(.*)$": "<rootDir>/src/lib/$1",
-    "^@pages/(.*)$": "<rootDir>/src/pages/$1",
-    "^@styles/(.*)$": "<rootDir>/src/styles/$1",
-    "^@utils/(.*)$": "<rootDir>/src/utils/$1",
+    "^@components": "<rootDir>/src/components/index",
+    "^@pages": "<rootDir>/src/pages/index",
+    "^@styles": "<rootDir>/src/styles/index",
+    "^@utils": "<rootDir>/src/utils/index",
   },
   setupFilesAfterEnv: ["./jest.setup.ts"],
   testPathIgnorePatterns: ["<rootDir>/node_modules/", "<rootDir>/.next/"],

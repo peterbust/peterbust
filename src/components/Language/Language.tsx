@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 
 import { StyledLink } from "./Language.styled";
-import { Typography } from "@components/index";
+import { Typography } from "@components";
 
 const Language = () => {
   const { locale, pathname } = useRouter();
