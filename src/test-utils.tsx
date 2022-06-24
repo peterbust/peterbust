@@ -2,7 +2,7 @@ import { render } from "@testing-library/react";
 import { ThemeProvider } from "styled-components";
 import { Fragment } from "react";
 
-import { GlobalStyle, Minireset, themes } from "@styles/index";
+import { GlobalStyle, Minireset, themes } from "@styles";
 
 type Props = { children: JSX.Element };
 

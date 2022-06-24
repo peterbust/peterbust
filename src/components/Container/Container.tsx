@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-import { rem } from "@utils/index";
+import { rem } from "@utils";
 
 const Container = styled.div`
   width: 94%;
